@@ -1,0 +1,19 @@
+# the command to start the EPAgent
+EpaCmd="java -Xms${MIN_HEAP_VAL_IN_MB}m -Xmx${MAX_HEAP_VAL_IN_MB}m -cp lib/EPAgent.jar:lib/IntroscopeServices.jar:lib/Agent.jar:epaplugins/epaMQMonitor/epaMQMonitor.jar:epaplugins/epaMQMonitor:epaplugins/epaMQMonitor/lib/com.ibm.mq.pcf.jar:epaplugins/epaMQMonitor/lib/com.ibm.mq.jar:epaplugins/epaMQMonitor/lib/connector.jar:epaplugins/epaMQMonitor/lib/com.ibm.mqjms.jar com.wily.introscope.api.IntroscopeEPAgent"
+#echo $EpaCmd 
+# ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+
+
+##########################################################################################
+##########################################################################################
+##                                                                                      ##
+##                                                                                      ##
+##                         Replace original EpaCmd line (specified above)               ##
+##                          with new line specified below                               ##
+##                           if using any other custom jars don't forget to include     ##	
+##                                         them as well!!!                              ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
+EpaCmd="java -Xms${MIN_HEAP_VAL_IN_MB}m -Xmx${MAX_HEAP_VAL_IN_MB}m -cp lib/EPAgent.jar::lib/com.ibm.mq.commonservices-7.5.0.2.jar:lib/com.ibm.mq.headers-7.5.0.2.jar:lib/com.ibm.mq.jmqi-7.5.0.2.jar:lib/com.ibm.mq.jms.Nojndi-7.5.0.2.jar:lib/com.ibm.mq.pcf-7.5.0.2.jar:lib/com.ibm.mq-7.5.0.2.jar:lib/com.ibm.mqjms-7.5.0.2.jar:lib/commons-cli-1.3.1.jar:lib/connector-7.5.0.2.jar:lib/dhbcore-7.5.0.2.jar:lib/jms-7.5.0.2.jar:lib/topicagent-0.0.1-SNAPSHOT.jar com.wily.introscope.api.IntroscopeEPAgent"

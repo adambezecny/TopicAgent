@@ -1,0 +1,44 @@
+##########################################################################################
+##########################################################################################
+##                                                                                      ##
+##                                                                                      ##
+##   Two lines below show how to configure stateful EPAgent plug-in TopicAgent.         ##
+##   Put these lines in <<EPAGENT_INSTALL_DIR>>/IntroscopeEPAgent.properties file.      ##
+##   Usage of *.class option in second line ensures plug-in is running in same          ##	
+##   JVM as EPAgent.                                                                    ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
+
+################################
+# Stateful Plugins
+#-----------------
+
+#introscope.epagent.plugins.stateful.names=APACHE,WEBLOGIC,WEBSPHERE,IIS
+
+#introscope.epagent.stateful.APACHE.command=perl apacheLogReader.pl 
+#introscope.epagent.stateful.WEBLOGIC.command=perl weblogicLogReader.pl 
+#introscope.epagent.stateful.WEBSPHERE.command=perl websphereLogReader.pl 
+#introscope.epagent.stateful.IIS.command=perl iisLogReader.pl 
+
+
+introscope.epagent.plugins.stateful.names=topicMonitor
+introscope.epagent.stateful.topicMonitor.class=com.wily.field.mqmonitoring.topicagent.TopicAgent -qmhost "localhost" -qmport 1415 -qmchannel "SYSTEM.DEF.SVRCONN" -qmname "MQDEVQM02" -qmuser "bezad01@TANT-A01" -qmpwd "MyPwd01" -pi 15
+
+
+##########################################################################################
+##########################################################################################
+##                                                                                      ##
+##                                                                                      ##
+##   It is also possible to configure multiple plug-ins for different queue managers    ##
+##   See example below                                                                  ##
+##                                                                                      ##
+##########################################################################################
+##########################################################################################
+
+introscope.epagent.plugins.stateful.names=topicMonitor1,topicMonitor2
+introscope.epagent.stateful.topicMonitor1.class=com.wily.field.mqmonitoring.topicagent.TopicAgent -qmhost "localhost" -qmport 1414 -qmchannel "SYSTEM.DEF.SVRCONN" -qmname "MQDEVQM01" -qmuser "bezad01@TANT-A01" -qmpwd "MyPwd01" -pi 15
+introscope.epagent.stateful.topicMonitor2.class=com.wily.field.mqmonitoring.topicagent.TopicAgent -qmhost "localhost" -qmport 1415 -qmchannel "SYSTEM.DEF.SVRCONN" -qmname "MQDEVQM02" -qmuser "bezad01@TANT-A01" -qmpwd "MyPwd01" -pi 15
+
+ 

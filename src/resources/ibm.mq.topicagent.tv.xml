@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TypeViewerSet xmlns="wily.typeviews" xmlns:its="http://www.w3.org/2005/11/its" namespace="wily.standard" version="2.0">
+    
+	<!-- see https://communities.ca.com/docs/DOC-231152020  -->
+	
+	<ComponentDefinition id="ibm_mq_topicagent_tv_component_1">
+        <MetricDataTable>
+
+            <Column content-type="LastPrefixSegment" segment-offset="1"  relative-width="6">
+                <Title its:translate="yes">Topic Type</Title>
+            </Column>
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_AdminTopic\|([^\|:]*)\|([^\|:]*):TopicName">
+                <Title its:translate="yes">Topic Name</Title>
+            </Column>
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_AdminTopic\|([^\|:]*)\|([^\|:]*):TopicString">
+                <Title its:translate="yes">Topic String</Title>
+            </Column>
+
+			<Column content-type="StringValue" relative-specifier="(.*)_AdminTopic\|([^\|:]*)\|([^\|:]*):ClusterName">
+                <Title its:translate="yes">Cluster Name</Title>
+            </Column>
+			
+			
+        </MetricDataTable>
+    </ComponentDefinition>
+	
+	<ComponentDefinition id="ibm_mq_topicagent_tv_component_2">
+        <MetricDataTable>
+            <Column content-type="LastPrefixSegment" segment-offset="1"  relative-width="6">
+                <Title its:translate="yes">Subscription Name</Title>
+            </Column>
+
+			<Column content-type="StringValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions\|([^\|:]*)\|Configuration:TopicString">
+                <Title its:translate="yes">Topic String</Title>
+            </Column>
+			
+			<!--
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions\|([^\|:]*)\|Status:Number Of Messages Per Interval">
+                <Title its:translate="yes">Number Of Messages Per Interval</Title>
+            </Column>
+
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions\|([^\|:]*)\|Status:Number Of Messages Total">
+                <Title its:translate="yes">Number Of Messages Total</Title>
+            </Column>
+			-->
+			
+        </MetricDataTable>
+    </ComponentDefinition>
+
+
+		<ComponentDefinition id="ibm_mq_topicagent_tv_component_3">
+        <MetricDataTable>
+		
+            <Column content-type="LastPrefixSegment" segment-offset="2"  relative-width="6">
+                <Title its:translate="yes">Topic Node (last segment)</Title>
+            </Column>
+		
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions:Number Of Active Subscribers">
+                <Title its:translate="yes">Number Of Active Subscribers</Title>
+            </Column>
+		
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions:Number Of Messages Per Interval">
+                <Title its:translate="yes">Number Of Messages Per Interval</Title>
+            </Column>
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Administrative Subscriptions:Number Of Messages Total">
+                <Title its:translate="yes">Number Of Messages Total</Title>
+            </Column>
+        </MetricDataTable>
+    </ComponentDefinition>
+
+		<ComponentDefinition id="ibm_mq_topicagent_tv_component_4">
+        <MetricDataTable>
+		
+            <Column content-type="LastPrefixSegment" segment-offset="2"  relative-width="6">
+                <Title its:translate="yes">Topic Node (last segment)</Title>
+            </Column>
+		
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_Subscriptions\|API Subscriptions:Number Of Active Subscribers">
+                <Title its:translate="yes">Number Of Active Subscribers</Title>
+            </Column>
+		
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|API Subscriptions:Number Of Messages Per Interval">
+                <Title its:translate="yes">Number Of Messages Per Interval</Title>
+            </Column>
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|API Subscriptions:Number Of Messages Total">
+                <Title its:translate="yes">Number Of Messages Total</Title>
+            </Column>
+        </MetricDataTable>
+    </ComponentDefinition>
+
+		<ComponentDefinition id="ibm_mq_topicagent_tv_component_5">
+        <MetricDataTable>
+		
+            <Column content-type="LastPrefixSegment" segment-offset="2"  relative-width="6">
+                <Title its:translate="yes">Topic Node (last segment)</Title>
+            </Column>
+		
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_Subscriptions\|Proxy Subscriptions:Number Of Active Subscribers">
+                <Title its:translate="yes">Number Of Active Subscribers</Title>
+            </Column>
+		
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Proxy Subscriptions:Number Of Messages Per Interval">
+                <Title its:translate="yes">Number Of Messages Per Interval</Title>
+            </Column>
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Subscriptions\|Proxy Subscriptions:Number Of Messages Total">
+                <Title its:translate="yes">Number Of Messages Total</Title>
+            </Column>
+        </MetricDataTable>
+    </ComponentDefinition>
+	
+		<ComponentDefinition id="ibm_mq_topicagent_tv_component_6">
+        <MetricDataTable>
+		
+            <Column content-type="LastPrefixSegment" segment-offset="1"  relative-width="6">
+                <Title its:translate="yes">Topic Node (last segment)</Title>
+            </Column>
+		
+		
+			<Column content-type="StringValue" relative-specifier="(.*)_Publications:Number Of Active Publishers">
+                <Title its:translate="yes">Number Of Active Publishers</Title>
+            </Column>
+		
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Publications:Number Of Messages Per Interval">
+                <Title its:translate="yes">Number Of Messages Per Interval</Title>
+            </Column>
+			<Column content-type="NumericalValue" relative-specifier="(.*)_Publications:Number Of Messages Total">
+                <Title its:translate="yes">Number Of Messages Total</Title>
+            </Column>
+        </MetricDataTable>
+    </ComponentDefinition>
+	
+	
+	
+    <TypeViewer id="ibm_mq_topicagent_tv1" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="1">
+        <Title its:translate="yes">Administrative Topics</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_1">
+                <Title its:translate="yes">Administrative Topics Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>
+	
+    <TypeViewer id="ibm_mq_topicagent_tv2" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="2">
+        <Title its:translate="yes">Administrative Subscriptions</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_2">
+                <Title its:translate="yes">Administrative Subscriptions Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>
+
+    <TypeViewer id="ibm_mq_topicagent_tv3" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="3">
+        <Title its:translate="yes">Administrative Subscriptions Status</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_3">
+                <Title its:translate="yes">Administrative Subscriptions Status Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>
+	
+    <TypeViewer id="ibm_mq_topicagent_tv4" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="4">
+        <Title its:translate="yes">API Subscriptions Status</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_3">
+                <Title its:translate="yes">API Subscriptions Status Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>
+
+    <TypeViewer id="ibm_mq_topicagent_tv5" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="5">
+        <Title its:translate="yes">Proxy Subscriptions Status</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_3">
+                <Title its:translate="yes">Proxy Subscriptions Status Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>
+	
+    <TypeViewer id="ibm_mq_topicagent_tv6" supported-items-specifier="MQ Topic Monitor\|([^\|:]*)\|Topic Space\|(?!=_Subscriptions|_Publications|_Status|_AdminTopic|Local Topic|Cluster Topic|Configuration)(.*)" tab-order="6">
+        <Title its:translate="yes">Publications Status</Title>
+        <Panel columns="1" layout="GridLayout" rows="1">
+            <Component id="ibm_mq_topicagent_tv_component_3">
+                <Title its:translate="yes">Publications Status Tabular View</Title>
+            </Component>
+        </Panel>
+    </TypeViewer>	
+	
+	
+</TypeViewerSet>

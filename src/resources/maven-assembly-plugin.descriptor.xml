@@ -1,0 +1,41 @@
+<assembly>
+  <id>dist</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <baseDirectory>topicagent-0.0.1</baseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>lib</outputDirectory>
+        <excludes>
+          <!-- this excludes epagent-10.1.0.15.jar from final build. Plug-in is supposed to be installed
+          into existing EPAgent installation where EPAgent.jar will be present  
+          See also pom.xml where this dependency is marked with <scope>provided</scope>
+          element that will exclude it from MANIFEST.MF
+          --> 
+          <exclude>com.wily.introscope:epagent</exclude>
+          <exclude>junit:junit</exclude>
+          <exclude>org.hamcrest:java-hamcrestepagent</exclude>
+        </excludes>
+      <scope>runtime</scope>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+    <fileSet>
+      <directory>src/resources</directory>
+      <outputDirectory>conf</outputDirectory>
+      <excludes>
+        <exclude>maven-assembly-plugin.descriptor.xml</exclude>
+        <exclude>readme.txt</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet>
+      <directory>src/resources</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>readme.txt</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>
